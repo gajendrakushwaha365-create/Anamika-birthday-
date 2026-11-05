@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Anamika ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;min-height:100vh;
+display:flex;align-items:center;justify-content:center;
+font-family:Arial;text-align:center;color:white;
+background:linear-gradient(135deg,#ff5f9e,#9b5de5);
+overflow:hidden;padding:20px
+}
+.card{
+background:#ffffff25;padding:28px 20px;
+border-radius:25px;width:100%;max-width:380px;
+box-shadow:0 10px 40px #0003
+}
+h1{font-size:30px}
+.gift{font-size:100px;cursor:pointer}
+button{
+background:#ff246e;color:white;border:0;
+padding:14px 25px;border-radius:30px;
+font-size:17px;cursor:pointer
+}
+#surprise{display:none}
+.cake{font-size:90px;animation:bounce 1s infinite alternate}
+@keyframes bounce{to{transform:translateY(-10px)}}
+.heart{
+position:fixed;bottom:-40px;
+animation:fly 5s linear forwards;
+font-size:28px;pointer-events:none
+}
+@keyframes fly{
+to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+</style>
+</head>
+<body>
+<div class="card" id="start">
+<h1>🎁 A Special Surprise!</h1>
+<p>Someone has a gift for you...</p>
+<div class="gift" onclick="openGift()">🎁</div>
+<button onclick="openGift()">OPEN YOUR GIFT ❤️</button>
+</div>
+
+<div class="card" id="surprise">
+<h1>🎉 HAPPY BIRTHDAY 🎉</h1>
+<div class="cake">🎂</div>
+<h2>Dear Anamika ❤️</h2>
+<p>May your life always be filled with happiness, love and beautiful memories.</p>
+<p>You are special. Keep smiling and shining like a star! ✨</p>
+<h2>Lots of Love! 💖</h2>
+</div>
+
+<script>
+function openGift(){
+document.getElementById("start").style.display="none";
+document.getElementById("surprise").style.display="block";
+for(let i=0;i<40;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML=["❤️","💖","🎈","✨","💕"][i%5];
+h.style.left=Math.random()*100+"vw";
+h.style.animationDelay=Math.random()*3+"s";
+document.body.appendChild(h);
+}
+}
+</script>
+</body>
+</html>
